@@ -62,7 +62,13 @@
         "src/plugins/home-graph/templates/homeGraph.njk",
         "src/plugins/home-graph/templates/homeGraphScript.njk",
         "src/plugins/home-graph/test/graph-data.node-test.mjs"
-      ]
+      ],
+      "settings": {
+        "placement": "below",
+        "height": "calc(100vh - 8rem)",
+        "showLabels": false,
+        "hideSidebar": true
+      }
     }
   }
 }
