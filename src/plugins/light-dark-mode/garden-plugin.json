@@ -1,0 +1,45 @@
+{
+  "id": "light-dark-mode",
+  "name": "Light/Dark Mode",
+  "version": "1.0.1",
+  "description": "Follows the visitor's system color scheme, adds a light/dark toggle that is remembered, and never flashes the wrong theme on load. Gives the default theme a proper light mode.",
+  "author": "Ole Eskild Steensen",
+  "hooks": "index.js",
+  "slots": {
+    "common.head": "templates/head.njk",
+    "floating.bottomRight": "templates/button.njk"
+  },
+  "styles": ["styles/light-dark-mode.scss"],
+  "assets": ["assets/"],
+  "settings": [
+    {
+      "key": "followSystem",
+      "name": "Follow system color scheme",
+      "description": "Until a visitor picks a mode, use their operating system's light/dark setting. Off: start in the garden's base theme.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "showButton",
+      "name": "Show toggle button",
+      "description": "Adds a sun/moon button to the bottom-right corner. Off: the site only follows the system setting.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "themeModes",
+      "name": "Theme mode support",
+      "description": "Auto reads the installed theme's CSS for .theme-light/.theme-dark. Override when a theme only ships one mode but auto offers both, or vice versa.",
+      "type": "select",
+      "options": ["auto", "both", "dark", "light"],
+      "default": "auto"
+    },
+    {
+      "key": "buttonLabel",
+      "name": "Button label",
+      "description": "Accessible label and tooltip for the toggle button.",
+      "type": "text",
+      "default": "Toggle light and dark mode"
+    }
+  ]
+}

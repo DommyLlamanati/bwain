@@ -1,0 +1,7 @@
+{
+  "name": "garden-plugin-light-dark-mode",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

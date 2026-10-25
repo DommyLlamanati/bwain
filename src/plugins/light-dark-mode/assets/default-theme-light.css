@@ -1,0 +1,36 @@
+/*
+ * Light mode for the template's default theme, whose stylesheet only has a
+ * dark palette (on :root) and hard-coded heading colors. Loaded only when
+ * no Obsidian theme is installed. :where() keeps specificity at zero so
+ * rules in the garden's custom-style.scss still win.
+ */
+:where(body.theme-light) {
+    --background-primary: #ffffff;
+    --background-secondary: #f3f3f3;
+    --background-modifier-border: #e0e0e0;
+    --text-normal: #2e3338;
+    --text-muted: #5c5c5c;
+    --text-faint: #999999;
+    --text-accent: #0a6ebd;
+    --callout-blend-mode: normal;
+
+    /* Declared on :root by the template, which resolves them against the
+       dark palette there; re-declare so they pick up the light one. */
+    --dg-graph-node-color: var(--text-accent);
+    --dg-graph-node-color-muted: var(--text-faint);
+    --dg-graph-label-color: var(--text-normal);
+    --dg-graph-bg: var(--background-primary);
+    --dg-graph-border-color: var(--background-secondary);
+    --dg-search-divider-color: var(--background-modifier-border);
+    --dg-notelink-hover-bg: rgba(0, 0, 0, 0.05);
+
+    background: var(--background-primary);
+    color: var(--text-normal);
+}
+
+:where(body.theme-light) h1 { color: #9a7b00; }
+:where(body.theme-light) h2 { color: #c4381f; }
+:where(body.theme-light) h3 { color: #3a7d2c; }
+:where(body.theme-light) h4 { color: #0a7ca8; }
+:where(body.theme-light) blockquote { background: rgba(0, 0, 0, 0.04); }
+:where(body.theme-light) p > code { background-color: #f3f3f3; }

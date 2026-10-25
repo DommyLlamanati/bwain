@@ -147,6 +147,25 @@
         "src/plugins/note-lock/tests/lock-regression.test.cjs",
         "src/plugins/note-lock/tests/preview.test.cjs"
       ]
+    },
+    "light-dark-mode": {
+      "repo": "oleeskild/garden-plugin-light-dark-mode",
+      "installedVersion": "1.0.1",
+      "installedRef": "v1.0.1",
+      "installedAt": "2026-10-25T23:39:06.295Z",
+      "enabled": true,
+      "files": [
+        "src/plugins/light-dark-mode/README.md",
+        "src/plugins/light-dark-mode/assets/default-theme-light.css",
+        "src/plugins/light-dark-mode/garden-plugin.json",
+        "src/plugins/light-dark-mode/index.js",
+        "src/plugins/light-dark-mode/package.json",
+        "src/plugins/light-dark-mode/screenshot.png",
+        "src/plugins/light-dark-mode/styles/light-dark-mode.scss",
+        "src/plugins/light-dark-mode/templates/button.njk",
+        "src/plugins/light-dark-mode/templates/head.njk",
+        "src/plugins/light-dark-mode/tests/themeModes.test.cjs"
+      ]
     }
   }
 }
