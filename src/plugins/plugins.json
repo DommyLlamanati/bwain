@@ -44,6 +44,25 @@
         "src/plugins/breadcrumbs/styles/trail.scss",
         "src/plugins/breadcrumbs/templates/trail.njk"
       ]
+    },
+    "home-graph": {
+      "repo": "oleeskild/garden-plugin-home-graph",
+      "installedVersion": "1.0.0",
+      "installedRef": "v1.0.0",
+      "installedAt": "2026-10-25T04:59:22.246Z",
+      "enabled": true,
+      "files": [
+        "src/plugins/home-graph/LICENSE",
+        "src/plugins/home-graph/README.md",
+        "src/plugins/home-graph/assets/home-graph.js",
+        "src/plugins/home-graph/garden-plugin.json",
+        "src/plugins/home-graph/lib/graph-data.mjs",
+        "src/plugins/home-graph/screenshot.png",
+        "src/plugins/home-graph/styles/home-graph.scss",
+        "src/plugins/home-graph/templates/homeGraph.njk",
+        "src/plugins/home-graph/templates/homeGraphScript.njk",
+        "src/plugins/home-graph/test/graph-data.node-test.mjs"
+      ]
     }
   }
 }

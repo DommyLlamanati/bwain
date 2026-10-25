@@ -1,0 +1,17 @@
+{#- Rendered in index.beforeContent, i.e. only on the garden's home page. -#}
+{%- set placement = pluginSettings.placement or "replace" -%}
+{%- if placement !== "replace" and placement !== "above" and placement !== "below" %}{% set placement = "replace" %}{% endif -%}
+<div
+  class="home-graph home-graph--{{ placement }}{% if pluginSettings.hideSidebar !== false %} home-graph--no-sidebar{% endif %}"
+  data-home-graph
+  data-placement="{{ placement }}"
+  data-show-labels="{% if pluginSettings.showLabels === true %}true{% else %}false{% endif %}"
+  style="--home-graph-height: {{ pluginSettings.height or 'calc(100vh - 8rem)' }};"
+>
+  <div class="home-graph__canvas" data-home-graph-canvas></div>
+  <div class="home-graph__empty" data-home-graph-empty hidden>Nothing has been published here yet.</div>
+  <div class="home-graph__controls" aria-label="Graph controls">
+    <button type="button" class="home-graph__btn" data-home-graph-fit title="Fit graph to view"><i data-lucide="maximize" aria-hidden="true"></i></button>
+    <button type="button" class="home-graph__btn" data-home-graph-labels title="Toggle titles" aria-pressed="{% if pluginSettings.showLabels === true %}true{% else %}false{% endif %}"><i data-lucide="tag" aria-hidden="true"></i></button>
+  </div>
+</div>

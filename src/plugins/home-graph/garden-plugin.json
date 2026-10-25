@@ -1,0 +1,48 @@
+{
+  "id": "home-graph",
+  "name": "Home Graph",
+  "version": "1.0.0",
+  "description": "Turns the home page into the global graph of your garden: every published note as a node, links as edges, click to open.",
+  "author": "Ole Eskild Steensen",
+  "slots": {
+    "index.beforeContent": "templates/homeGraph.njk",
+    "index.footer": "templates/homeGraphScript.njk"
+  },
+  "styles": ["styles/home-graph.scss"],
+  "assets": ["assets/", "lib/"],
+  "settings": [
+    {
+      "key": "placement",
+      "name": "Placement",
+      "description": "replace: the graph is the home page (note title and content are hidden). above / below: the graph is shown together with the home note's content.",
+      "type": "select",
+      "options": ["replace", "above", "below"],
+      "default": "replace",
+      "env": "HOME_GRAPH_PLACEMENT"
+    },
+    {
+      "key": "height",
+      "name": "Height",
+      "description": "CSS height of the graph area, e.g. 80vh, 600px or calc(100vh - 8rem).",
+      "type": "text",
+      "default": "calc(100vh - 8rem)",
+      "env": "HOME_GRAPH_HEIGHT"
+    },
+    {
+      "key": "showLabels",
+      "name": "Always show titles",
+      "description": "Show every note title at all zoom levels. Off: titles fade in as you zoom, and on hover, like the core graph.",
+      "type": "boolean",
+      "default": false,
+      "env": "HOME_GRAPH_SHOW_LABELS"
+    },
+    {
+      "key": "hideSidebar",
+      "name": "Hide sidebar on home page",
+      "description": "Hide the right-hand sidebar (local graph, table of contents, backlinks) on the home page.",
+      "type": "boolean",
+      "default": true,
+      "env": "HOME_GRAPH_HIDE_SIDEBAR"
+    }
+  ]
+}
