@@ -1,0 +1,14 @@
+{%- set gpRecent = collections.note | gpRecentlyTended(pluginSettings.count) -%}
+{%- if gpRecent.length > 0 -%}
+<section class="gp-recently-tended">
+  <h2>{{ pluginSettings.heading }}</h2>
+  <ul>
+    {%- for note in gpRecent -%}
+    <li>
+      <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
+      <span class="gp-recent-date human-date">{{ note.when | gpDateString }}</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}

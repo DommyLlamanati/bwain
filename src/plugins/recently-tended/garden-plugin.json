@@ -1,0 +1,26 @@
+{
+  "id": "recently-tended",
+  "name": "Recently Tended",
+  "version": "1.0.0",
+  "description": "A list of your most recently updated notes on the home page.",
+  "author": "Ole Eskild Steensen",
+  "hooks": "index.js",
+  "slots": {
+    "index.afterContent": "templates/list.njk"
+  },
+  "styles": ["styles/list.scss"],
+  "settings": [
+    {
+      "key": "heading",
+      "name": "Heading",
+      "type": "text",
+      "default": "Recently tended"
+    },
+    {
+      "key": "count",
+      "name": "Number of notes",
+      "type": "number",
+      "default": 5
+    }
+  ]
+}
