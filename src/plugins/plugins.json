@@ -16,6 +16,20 @@
         "src/plugins/sidebar-controls/templates/footer.njk",
         "src/plugins/sidebar-controls/templates/head.njk"
       ]
+    },
+    "related-notes": {
+      "repo": "oleeskild/garden-plugin-related-notes",
+      "installedVersion": "1.0.0",
+      "installedRef": "v1.0.0",
+      "installedAt": "2026-10-25T04:58:54.689Z",
+      "enabled": true,
+      "files": [
+        "src/plugins/related-notes/README.md",
+        "src/plugins/related-notes/garden-plugin.json",
+        "src/plugins/related-notes/index.js",
+        "src/plugins/related-notes/styles/related.scss",
+        "src/plugins/related-notes/templates/related.njk"
+      ]
     }
   }
 }

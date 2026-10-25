@@ -1,0 +1,30 @@
+.gp-related-notes {
+  margin-top: 32px;
+
+  .gp-related-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+
+  .gp-related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+  }
+
+  .gp-related-card {
+    display: block;
+    padding: 10px 12px;
+    border: 1px solid var(--background-modifier-border, rgba(128, 128, 128, 0.25));
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      background: var(--background-modifier-hover, rgba(128, 128, 128, 0.1));
+    }
+  }
+}

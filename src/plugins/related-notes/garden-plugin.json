@@ -1,0 +1,26 @@
+{
+  "id": "related-notes",
+  "name": "Related Notes",
+  "version": "1.0.0",
+  "description": "Suggests related notes under each note, based on the link graph neighborhood.",
+  "author": "Ole Eskild Steensen",
+  "hooks": "index.js",
+  "slots": {
+    "notes.afterContent": "templates/related.njk"
+  },
+  "styles": ["styles/related.scss"],
+  "settings": [
+    {
+      "key": "heading",
+      "name": "Heading",
+      "type": "text",
+      "default": "Related notes"
+    },
+    {
+      "key": "count",
+      "name": "Number of suggestions",
+      "type": "number",
+      "default": 4
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{%- set gpRelated = graph | gpRelatedNotes(page.url, pluginSettings.count) -%}
+{%- if gpRelated.length > 0 -%}
+<section class="gp-related-notes">
+  <div class="gp-related-heading">{{ pluginSettings.heading }}</div>
+  <div class="gp-related-grid">
+    {%- for note in gpRelated -%}
+    <a class="internal-link gp-related-card" href="{{ note.url }}" data-note-icon="{{ note.noteIcon }}">{{ note.title }}</a>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
