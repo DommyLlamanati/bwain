@@ -1,0 +1,22 @@
+{
+  "name": "garden-plugin-toc-settings",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check.cjs",
+    "install:garden": "node scripts/install.cjs",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "playwright-core": "1.63.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koltensaccount/garden-plugin-toc-settings.git"
+  },
+  "homepage": "https://github.com/koltensaccount/garden-plugin-toc-settings#readme"
+}

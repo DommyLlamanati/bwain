@@ -1,0 +1,97 @@
+{
+  "id": "toc-settings",
+  "name": "TOC Settings",
+  "version": "1.1.0",
+  "description": "Simple TOC presentation presets, collapsible branches and automatic following of the core active heading.",
+  "author": "Kolten Bendickson",
+  "slots": {
+    "common.footer": "templates/config.njk"
+  },
+  "styles": [
+    "styles/toc-settings.css"
+  ],
+  "scripts": [
+    "assets/toc-settings.js"
+  ],
+  "settings": [
+    {
+      "key": "textSize",
+      "name": "Text size",
+      "type": "select",
+      "options": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "default": "Medium"
+    },
+    {
+      "key": "noteSpacing",
+      "name": "Space beside the note",
+      "type": "select",
+      "options": [
+        "Narrow",
+        "Comfortable",
+        "Wide"
+      ],
+      "default": "Comfortable"
+    },
+    {
+      "key": "headingSpacing",
+      "name": "Space between headings",
+      "type": "select",
+      "options": [
+        "Compact",
+        "Comfortable",
+        "Spacious"
+      ],
+      "default": "Comfortable"
+    },
+    {
+      "key": "listHeight",
+      "name": "List height",
+      "type": "select",
+      "options": [
+        "Short",
+        "Medium",
+        "Tall"
+      ],
+      "default": "Medium"
+    },
+    {
+      "key": "detail",
+      "name": "Headings to show",
+      "type": "select",
+      "options": [
+        "Main headings",
+        "Main + subheadings",
+        "All headings"
+      ],
+      "default": "All headings"
+    },
+    {
+      "key": "showTitle",
+      "name": "Show note name",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "highlightActive",
+      "name": "Highlight where I am",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "collapsible",
+      "name": "Collapsible TOC branches",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "followActive",
+      "name": "Keep current heading visible",
+      "type": "boolean",
+      "default": true
+    }
+  ]
+}

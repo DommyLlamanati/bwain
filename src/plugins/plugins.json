@@ -96,6 +96,28 @@
         "src/plugins/recently-tended/styles/list.scss",
         "src/plugins/recently-tended/templates/list.njk"
       ]
+    },
+    "toc-settings": {
+      "repo": "koltensaccount/garden-plugin-toc-settings",
+      "installedVersion": "1.1.0",
+      "installedRef": "v1.1.0",
+      "installedAt": "2026-10-25T23:38:39.588Z",
+      "enabled": true,
+      "files": [
+        "src/plugins/toc-settings/LICENSE",
+        "src/plugins/toc-settings/README.md",
+        "src/plugins/toc-settings/VALIDATION.md",
+        "src/plugins/toc-settings/assets/toc-settings.js",
+        "src/plugins/toc-settings/garden-plugin.json",
+        "src/plugins/toc-settings/package-lock.json",
+        "src/plugins/toc-settings/package.json",
+        "src/plugins/toc-settings/screenshot.png",
+        "src/plugins/toc-settings/scripts/check.cjs",
+        "src/plugins/toc-settings/scripts/install.cjs",
+        "src/plugins/toc-settings/styles/toc-settings.css",
+        "src/plugins/toc-settings/templates/config.njk",
+        "src/plugins/toc-settings/tests/browser.test.cjs"
+      ]
     }
   }
 }
