@@ -1,0 +1,24 @@
+{% set lockConfig = page.url | gpNoteLock(lock) %}
+{% if lockConfig %}
+<script type="application/json" id="dg-note-lock-config">{{ lockConfig | safe }}</script>
+<script>document.documentElement.classList.add("dg-note-locked");</script>
+{% if pluginSettings.showFileBrowser %}
+<script>document.documentElement.classList.add("dg-note-lock-navigation");</script>
+{% endif %}
+<style>
+html:not(.dg-note-unlocked):not(.dg-note-lock-navigation) body > :not(.dg-note-lock),
+html:not(.dg-note-unlocked) body :is(main.content, #page-panel, .sidebar, .toc-container, .page-panel-backdrop, .dg-reading-meta, .dg-reading-progress) { display: none !important; }
+html:not(.dg-note-unlocked) body > :not(.dg-note-lock),
+html:not(.dg-note-unlocked) body > :not(.dg-note-lock) * { visibility: hidden !important; }
+html:not(.dg-note-unlocked).dg-note-lock-navigation body:not(.dg-rp-left-closed) .filetree-wrapper,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body:not(.dg-rp-left-closed) .filetree-wrapper *,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body .navbar,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body .navbar *,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body .fullpage-overlay,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body .dg-rp-restore-left,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body .dg-rp-restore-left *,
+html:not(.dg-note-unlocked).dg-note-lock-navigation body .dg-rp-left-splitter { visibility: visible !important; }
+html:not(.dg-note-unlocked).dg-note-lock-navigation body :is(.filetree-wrapper, .navbar) :is(.search-button, .page-panel-toggle, .dg-print-button),
+html:not(.dg-note-unlocked).dg-note-lock-navigation body :is(.filetree-wrapper, .navbar) :is(.search-button, .page-panel-toggle, .dg-print-button) * { visibility: hidden !important; pointer-events: none !important; }
+</style>
+{% endif %}

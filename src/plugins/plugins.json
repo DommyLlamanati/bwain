@@ -118,6 +118,35 @@
         "src/plugins/toc-settings/templates/config.njk",
         "src/plugins/toc-settings/tests/browser.test.cjs"
       ]
+    },
+    "note-lock": {
+      "repo": "koltensaccount/garden-plugin-note-lock",
+      "installedVersion": "1.2.0",
+      "installedRef": "v1.2.0",
+      "installedAt": "2026-10-25T23:38:57.199Z",
+      "enabled": true,
+      "files": [
+        "src/plugins/note-lock/LICENSE",
+        "src/plugins/note-lock/README.md",
+        "src/plugins/note-lock/VALIDATION.md",
+        "src/plugins/note-lock/assets/note-lock.js",
+        "src/plugins/note-lock/assets/preview-guard.js",
+        "src/plugins/note-lock/garden-plugin.json",
+        "src/plugins/note-lock/index.js",
+        "src/plugins/note-lock/package-lock.json",
+        "src/plugins/note-lock/package.json",
+        "src/plugins/note-lock/screenshot.png",
+        "src/plugins/note-lock/scripts/check.cjs",
+        "src/plugins/note-lock/scripts/install.cjs",
+        "src/plugins/note-lock/styles/note-lock.css",
+        "src/plugins/note-lock/templates/lock.njk",
+        "src/plugins/note-lock/templates/preview.njk",
+        "src/plugins/note-lock/tests/browser.test.cjs",
+        "src/plugins/note-lock/tests/config.test.cjs",
+        "src/plugins/note-lock/tests/fixtures/core-link-preview.njk",
+        "src/plugins/note-lock/tests/lock-regression.test.cjs",
+        "src/plugins/note-lock/tests/preview.test.cjs"
+      ]
     }
   }
 }

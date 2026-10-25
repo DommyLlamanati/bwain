@@ -1,0 +1,54 @@
+{
+  "id": "note-lock",
+  "name": "Note Lock (Casual Privacy)",
+  "version": "1.2.0",
+  "description": "A client-side password screen for casual privacy with optional navigation and search/feed filtering; not encryption or secure access control.",
+  "author": "Kolten Bendickson",
+  "hooks": "index.js",
+  "slots": {
+    "common.head": "templates/lock.njk",
+    "common.footer": "templates/preview.njk"
+  },
+  "styles": [
+    "styles/note-lock.css"
+  ],
+  "scripts": [
+    "assets/note-lock.js",
+    "assets/preview-guard.js"
+  ],
+  "settings": [
+    {
+      "key": "showFileBrowser",
+      "name": "Show file browser while locked",
+      "description": "Keep existing navigation usable so visitors can leave a locked homepage. Off keeps the full-page lock. Honors Digital Garden's file-browser setting; it does not protect other notes.",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "defaultPassword",
+      "name": "Shared password for selected notes",
+      "description": "Set this once, then add a checkbox property named lock to each note you want to protect and check it. No URL mapping is needed. Passwords are visible in the garden source; use a unique passphrase.",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "key": "notePasswords",
+      "name": "Different passwords by URL (advanced, optional)",
+      "description": "Leave {} for the checkbox workflow. For different passwords, copy the exact published path: {\"/private-note/\":\"different passphrase\"}. Invalid entries are ignored with build warnings; paths are never guessed. Only an exact / targets the homepage. Keep the source repository private.",
+      "type": "text",
+      "default": "{}"
+    },
+    {
+      "key": "excludeLockedFromSearch",
+      "name": "Exclude locked notes from search",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "excludeLockedFromFeed",
+      "name": "Exclude locked notes from RSS",
+      "type": "boolean",
+      "default": true
+    }
+  ]
+}
