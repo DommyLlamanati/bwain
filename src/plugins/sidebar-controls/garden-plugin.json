@@ -1,0 +1,65 @@
+{
+  "id": "sidebar-controls",
+  "name": "Sidebar Controls",
+  "version": "1.0.0",
+  "description": "Adds buttons that collapse the file tree and the right sidebar, and can push the sidebar to the right edge of the window.",
+  "author": "Ole Eskild Steensen",
+  "slots": {
+    "common.head": "templates/head.njk",
+    "common.footer": "templates/footer.njk",
+    "floating.bottomRight": "templates/floating.njk"
+  },
+  "styles": [
+    "styles/sidebar-controls.scss"
+  ],
+  "settings": [
+    {
+      "key": "toggleFileTree",
+      "name": "Toggle file tree",
+      "description": "Show a button that collapses the file tree on the left.",
+      "type": "boolean",
+      "default": true,
+      "env": "SIDEBAR_CONTROLS_FILE_TREE"
+    },
+    {
+      "key": "toggleSidebar",
+      "name": "Toggle right sidebar",
+      "description": "Show a button that collapses the right sidebar (graph, table of contents, backlinks).",
+      "type": "boolean",
+      "default": true,
+      "env": "SIDEBAR_CONTROLS_RIGHT"
+    },
+    {
+      "key": "buttonPosition",
+      "name": "Button position",
+      "description": "Put the buttons in the top corners next to each sidebar, or in the floating button stack in the bottom-right corner.",
+      "type": "select",
+      "options": [
+        "corners",
+        "floating"
+      ],
+      "default": "corners",
+      "env": "SIDEBAR_CONTROLS_POSITION"
+    },
+    {
+      "key": "sidebarPosition",
+      "name": "Right sidebar position",
+      "description": "Keep the right sidebar next to the note, or push it all the way to the right edge of the window. Applies on screens wider than 1400px.",
+      "type": "select",
+      "options": [
+        "content",
+        "edge"
+      ],
+      "default": "content",
+      "env": "SIDEBAR_CONTROLS_SIDEBAR_POSITION"
+    },
+    {
+      "key": "remember",
+      "name": "Remember state",
+      "description": "Keep sidebars collapsed across pages and visits for each reader.",
+      "type": "boolean",
+      "default": true,
+      "env": "SIDEBAR_CONTROLS_REMEMBER"
+    }
+  ]
+}

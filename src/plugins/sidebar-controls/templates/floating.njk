@@ -1,0 +1,14 @@
+{% if pluginSettings.buttonPosition == "floating" and (pluginSettings.toggleFileTree or pluginSettings.toggleSidebar) %}
+<div class="sc-floating">
+  {% if pluginSettings.toggleSidebar %}
+  <button type="button" class="sc-toggle sc-toggle-sidebar" data-sc-panel="sidebar" aria-pressed="false" aria-label="Toggle right sidebar" title="Toggle right sidebar">
+    <i class="sc-icon-open" data-lucide="panel-right-close"></i><i class="sc-icon-closed" data-lucide="panel-right-open"></i>
+  </button>
+  {% endif %}
+  {% if pluginSettings.toggleFileTree %}
+  <button type="button" class="sc-toggle sc-toggle-files" data-sc-panel="files" aria-pressed="false" aria-label="Toggle file tree" title="Toggle file tree">
+    <i class="sc-icon-open" data-lucide="panel-left-close"></i><i class="sc-icon-closed" data-lucide="panel-left-open"></i>
+  </button>
+  {% endif %}
+</div>
+{% endif %}

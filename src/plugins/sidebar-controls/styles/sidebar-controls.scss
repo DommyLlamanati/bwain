@@ -1,0 +1,189 @@
+// Collapsing only applies where the panels sit beside the content: the file
+// tree from 1001px (below that it is already a slide-out menu) and the right
+// sidebar from 1401px (below that it is the core bottom-sheet page panel).
+
+// Left edge of the content when the file tree is collapsed but the right
+// sidebar is still showing: centered, yet shifted left to leave it room.
+$left-without-files: max(
+    20px,
+    min(
+        calc((100vw - var(--dg-content-max-width)) / 2),
+        calc(100vw - var(--dg-content-max-width) - var(--dg-sidebar-max-width) - var(--dg-sidebar-gap) - 20px)
+    )
+);
+
+// Width of the file tree column, mirroring .filetree-wrapper in the core.
+$filetree-width-wide: calc(
+    max(
+        calc((100vw - var(--dg-content-max-width)) / 2),
+        calc(var(--dg-filetree-min-width) + var(--dg-filetree-gap))
+    ) - var(--dg-filetree-gap)
+);
+
+.sc-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: var(--dg-search-btn-height);
+    height: var(--dg-search-btn-height);
+    padding: 0;
+    border-radius: var(--dg-search-btn-radius);
+    border: 1px solid var(--background-modifier-border, rgba(255, 255, 255, 0.1));
+    background-color: var(--background-primary);
+    color: var(--text-muted);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--text-normal);
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .sc-icon-closed {
+        display: none;
+    }
+
+    &[aria-pressed="true"] {
+        .sc-icon-open {
+            display: none;
+        }
+
+        .sc-icon-closed {
+            display: inline;
+        }
+    }
+}
+
+.sc-floating {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .sc-toggle {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.sc-corners .sc-toggle {
+    position: fixed;
+    top: 16px;
+    z-index: 12;
+}
+
+.sc-corners .sc-toggle-sidebar {
+    right: 16px;
+}
+
+@media (min-width: 1001px) {
+    body:not(.no-filetree) .sc-toggle-files {
+        display: inline-flex;
+    }
+
+    // Sit just outside the file tree's right edge, or in the corner when collapsed
+    .sc-corners .sc-toggle-files {
+        left: calc(var(--dg-filetree-width) + 12px);
+    }
+
+    html.sc-files-collapsed {
+        .sc-corners .sc-toggle-files {
+            left: 16px;
+        }
+
+        .filetree-wrapper {
+            display: none !important;
+        }
+
+        .content:not(.canvas-page) {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: var(--dg-content-max-width);
+        }
+
+        .content.canvas-page {
+            margin-left: 20px;
+        }
+    }
+}
+
+@media (min-width: 1401px) {
+    // Left edge of the content in each state. The default mirrors the core
+    // .content margin; the right sidebar and its button are placed from it.
+    // Defined on body, where the core --dg-* variables live.
+    body {
+        --sc-content-left: max(
+            calc(var(--dg-filetree-min-width) + var(--dg-filetree-gap)),
+            min(
+                calc((100vw - var(--dg-content-max-width)) / 2),
+                calc(100vw - var(--dg-content-max-width) - var(--dg-sidebar-max-width) - var(--dg-sidebar-gap) - 20px)
+            )
+        );
+    }
+
+    html.sc-files-collapsed body {
+        --sc-content-left: #{$left-without-files};
+    }
+
+    html.sc-sidebar-collapsed body {
+        --sc-content-left: max(
+            calc(var(--dg-filetree-min-width) + var(--dg-filetree-gap)),
+            calc((100vw - var(--dg-content-max-width)) / 2)
+        );
+    }
+
+    html.sc-sidebar-collapsed.sc-files-collapsed body {
+        --sc-content-left: calc((100vw - var(--dg-content-max-width)) / 2);
+    }
+
+    html.sc-files-collapsed,
+    html.sc-sidebar-collapsed {
+        .content:not(.canvas-page) {
+            margin-left: var(--sc-content-left);
+            margin-right: auto;
+        }
+    }
+
+    html.sc-files-collapsed:not(.sc-sidebar-edge) body:not(:has(.content.canvas-page)) .sidebar {
+        left: calc(var(--sc-content-left) + var(--dg-content-max-width) + var(--dg-sidebar-gap));
+    }
+
+    html.sc-sidebar-collapsed .sidebar {
+        display: none !important;
+    }
+
+    body:has(#page-panel) .sc-toggle-sidebar {
+        display: inline-flex;
+    }
+
+    .sc-corners .sc-toggle-files {
+        left: calc(max($filetree-width-wide, var(--dg-filetree-min-width)) + 12px);
+    }
+
+    // Line the button up with the sidebar's left edge, or where it would be
+    .sc-corners .sc-toggle-sidebar {
+        right: auto;
+        left: calc(var(--sc-content-left) + var(--dg-content-max-width) + var(--dg-sidebar-gap));
+    }
+
+    // Edge mode: the sidebar hugs the right edge of the window, button above it
+    html.sc-sidebar-edge body:not(:has(.content.canvas-page)) .sidebar {
+        left: auto;
+        right: 16px;
+    }
+
+    html.sc-sidebar-edge .sc-corners .sc-toggle-sidebar,
+    body:has(.content.canvas-page) .sc-corners .sc-toggle-sidebar {
+        left: auto;
+        right: 16px;
+    }
+}
